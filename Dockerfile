@@ -9,15 +9,14 @@ COPY start.sh /start.sh
 RUN apk update \
   && apk add --no-cache python3 py-netifaces git \
   && git clone --depth 1 https://github.com/alsmith/multicast-relay.git \
-  && apk del git 
+  && apk del git
 # use b fixBroadcast option before URL to download specific sub branch
-
 
 # Define environment variable
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV LANG C.UTF-8
-ENV TZ America/Los_Angeles
-ENV INTERFACES br0 br50
+ENV TZ Europe/Zurich
+ENV INTERFACES eth1 eth2
 
 
 # Run  when the container launches
