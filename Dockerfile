@@ -16,10 +16,8 @@ RUN apk update \
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV LANG C.UTF-8
 ENV TZ Europe/Zurich
-ENV INTERFACES eth1 eth2
-
+ENV INTERFACES enX0 enX1
 
 # Run  when the container launches
-# ENTRYPOINT ["./start.sh"]
-# ENTRYPOINT ["./bin/ash"]
-CMD ["sh", "./start.sh"]
+ENTRYPOINT ["sh"]
+CMD ["./start.sh"]

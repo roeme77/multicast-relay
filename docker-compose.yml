@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  relay:
+    build: .
+    network_mode: host
+    restart: always
+    environment:
+      - INTERFACES=enX0 enX1 enX2
