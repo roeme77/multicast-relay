@@ -5,4 +5,5 @@ services:
     network_mode: host
     restart: always
     environment:
-      - INTERFACES=enX0 enX1 enX2
+      - INTERFACES=eth0 eth1 eth2
+      #- OPTS=--verbose
