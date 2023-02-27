@@ -46,3 +46,12 @@ Please note that even when your devices have discovered one another, at least in
 E.G. To allow chromecast through the firewall on a vm(photon 4), do not forget to save iptables after everything is working:
 
 `sudo iptables -I INPUT -m pkttype --pkt-type multicast -j ACCEPT`
+
+
+## Firewall Notes 2
+Please remember that the firewall need to be able to route traffic from one vlan into another. Have firewall rules in place if needed for:
+
++ Outbound traffic from controllers to devices: TCP - ports 1400, 1443, and 4444
++ Inbount traffic from devices back to the controller: TCP - ports 3400, 3401, and 3500
+
+See blog post here for more information <https://www.packetmischief.ca/2021/08/04/operating-sonos-speakers-in-a-multi-vlan-network/>
